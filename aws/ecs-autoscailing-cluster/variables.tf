@@ -11,15 +11,15 @@ variable "ecs_cluster_name" {
 }
 
 variable "asg_availability_zones" {
-  description = "The availability zones where autoscale group instances are created"
+  description = "The availability zones where autoscale group instances are created. Ignore if `asg_subnet_ids` is defined"
   type        = list(string)
-  default     = []
+  default     = null
 }
 
 variable "asg_subnet_ids" {
-  description = "The list of subnet IDs associate with autoscale instances"
+  description = "The list of subnet IDs associate with autoscale instances. Ignore if `asg_availability_zones` is defined"
   type        = list(string)
-  default     = []
+  default     = null
 }
 
 variable "asg_min_size" {

@@ -92,7 +92,7 @@ packages:
 write_files:
   - path: /etc/environment
     content: |
-      LC_ALL=en_US.UTF-8
+      LC_ALL=${var.instance_locale}
   - path: /etc/ecs/ecs.config
     content: |
       ECS_CLUSTER=${aws_ecs_cluster.cluster.name}
